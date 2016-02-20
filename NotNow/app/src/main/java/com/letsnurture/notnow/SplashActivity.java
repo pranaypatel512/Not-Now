@@ -9,14 +9,14 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class SplashActivity extends AppCompatActivity {
+import com.letsnurture.notnow.baseclass.BaseAppCompatActivity;
+
+public class SplashActivity extends BaseAppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -26,6 +26,11 @@ public class SplashActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    @Override
+    public int getResourceLayoutId() {
+        return R.layout.activity_splash;
     }
 
     @Override
